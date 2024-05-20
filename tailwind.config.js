@@ -1,4 +1,3 @@
-
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -8,3 +7,15 @@ module.exports = {
   },
   plugins: [],
 }
+
+// Adding TailwindCSS configuration
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+// End of TailwindCSS configuration

@@ -1,15 +1,19 @@
+// Import necessary libraries
 import React, { useEffect, useRef } from 'react';
 import { fabric } from 'fabric';
 import axios from 'axios';
 
+// Define the DrawingCanvas component
 const DrawingCanvas = () => {
   const canvasRef = useRef(null);
 
+  // Initialize the canvas when the component mounts
   useEffect(() => {
     const canvas = new fabric.Canvas(canvasRef.current);
     canvas.isDrawingMode = true;
   }, []);
 
+  // Function to save the drawing
   const saveDrawing = async () => {
     const canvas = canvasRef.current.fabric;
     const drawingData = canvas.toDataURL('png');
@@ -32,6 +36,7 @@ const DrawingCanvas = () => {
     }
   };
 
+  // Render the canvas and save button
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <canvas ref={canvasRef} width={800} height={600} className="border border-gray-300" />
@@ -45,4 +50,5 @@ const DrawingCanvas = () => {
   );
 };
 
+// Export the DrawingCanvas component
 export default DrawingCanvas;

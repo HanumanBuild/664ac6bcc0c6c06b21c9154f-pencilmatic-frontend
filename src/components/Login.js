@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
+// Define the Login component
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const history = useHistory();
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -18,6 +20,7 @@ const Login = () => {
     }
   };
 
+  // Render the login form
   return (
     <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-xs">
@@ -45,4 +48,5 @@ const Login = () => {
   );
 };
 
+// Export the Login component
 export default Login;
